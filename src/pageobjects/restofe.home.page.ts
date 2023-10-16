@@ -13,6 +13,10 @@ class RestofeHomePage extends Page {
         return $('//p[contains(text(),"Logout")]');
     }
 
+    public async navigateToMenu(menuname: string){
+        return $('//button[contains(text(),"'+menuname+'")]').click();
+    }
+
     public async restofeLogout(username: string){
         await this.loggedInUser(username).click();
         await this.logOut.click();
